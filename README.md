@@ -6,9 +6,6 @@
 
 <p align="center">
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/henrymendozapuerta/EbookStore?style=flat-square">
-
-    [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=henrymendozapuerta&langs_count=8)](https://github.com/henrymendozapuerta/EbookStore)
-
     <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/henrymendozapuerta/EbookStore?style=flat-square">
     <img alt="Made by Henry Mendoza Puerta" src="https://img.shields.io/badge/made%20by-henrymendozapuerta-%237519C1?style=flat-square"><br/>
 
