@@ -28,8 +28,9 @@
 
 - [PostgreSQL](https://www.postgresql.org/)
 - [Java](https://java.com/)
-- [Spring Boot](https://spring.io/)
-- [Spring Boot](https://spring.io/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Security](https://spring.io/projects/spring-security)
+- [JSON Web Token](https://jwt.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Angular](https://angular.io/)
 - [Angular Material](https://material.angular.io/)
