@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-offset-3 mx-auto">
+    <form
+      (ngSubmit)="save()"
+      autocomplete="off"
+      [formGroup]="form"
+      #frmLibro="ngForm"
+    >
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>Título</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Título"
+          formControlName="title"
+        />
+
+        <mat-error *ngIf="form.controls.title.hasError('required')">
+          Este campo es obligatorio
+        </mat-error>
+        <mat-error *ngIf="form.controls.title.hasError('minlength')">
+          Debe tener al menos 5 caracteres
+        </mat-error>
+        <mat-error *ngIf="form.controls.title.hasError('maxlength')">
+          Debe tener 70 caracteres como máximo
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="description" row="5"></textarea>
+
+        <mat-error *ngIf="form.controls.description.hasError('required')">
+          Este campo es obligatorio
+        </mat-error>
+        <mat-error *ngIf="form.controls.description.hasError('minlength')">
+          Debe tener al menos 11 caracteres
+        </mat-error>
+        <mat-error *ngIf="form.controls.description.hasError('maxlength')">
+          Debe tener 255 caracteres como máximo
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>Precio</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Precio"
+          formControlName="price"
+        />
+        <mat-error *ngIf="form.controls.price.hasError('required')">
+          Este campo es obligatorio
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-button routerLink="/admin/libros">Cancelar</button>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="ms-2"
+        [disabled]="frmLibro.invalid"
+      >
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>

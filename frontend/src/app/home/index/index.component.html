@@ -1,0 +1,29 @@
+<div class="banner">
+  <div class="overlay"></div>
+  <div class="text">
+    <h1 class="title">EBook Store</h1>
+    <p class="subtitle">
+      Encuentra el libro digital perfecto para ti y comienza a aprender sin
+      límites.
+    </p>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h1 class="fw-bold">Últimos libros</h1>
+
+  <div class="row">
+    <div *ngFor="let libro of ultimosLibros" class="col-md-4 mb-3">
+      <mat-card class="order-card">
+        <div mat-card-image>
+          <img [src]="urlImage" />
+        </div>
+
+        <mat-card-content>
+          <h1>{{ libro.title }}</h1>
+          <p>{{ libro.description | slice: 0:100 }}...</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

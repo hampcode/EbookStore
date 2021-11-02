@@ -1,0 +1,87 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "~@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$hampcode-primary: mat.define-palette(mat.$indigo-palette);
+$hampcode-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$hampcode-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$hampcode-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $hampcode-primary,
+      accent: $hampcode-accent,
+      warn: $hampcode-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($hampcode-theme);
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+
+@import "~bootstrap/scss/utilities"; // Configures the utility classes that should be generated
+@import "~bootstrap/scss/utilities/api"; // Generates the actual utility classes
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.banner {
+  background: url("./assets/banner3.png") center no-repeat;
+  min-height: 500px;
+  background-size: cover;
+  position: relative;
+  z-index: -2;
+}
+.banner .overlay {
+  /* background: rgba(0,0,0,0.25); */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.banner .text {
+  text-align: right;
+  color: rgb(0, 0, 0);
+  padding: 3rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.banner .text .title {
+  font-size: 5em;
+  color: #ff284f;
+}
+
+.banner .text .subtitle {
+  margin-top: 2rem;
+  font-size: 120%;
+  display: inline-block;
+}
